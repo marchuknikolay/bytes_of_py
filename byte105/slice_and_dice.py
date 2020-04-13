@@ -31,3 +31,11 @@ def slice_and_dice(text: str = text) -> list:
     """Get a list of words from the passed in text.
        See the Bite description for step by step instructions"""
     results = []
+
+    for line in text.strip().split('\n'):
+        line = line.lstrip()
+
+        if line[0].islower():
+            results.append(line.split(' ')[-1].strip('.!'))
+
+    return results
