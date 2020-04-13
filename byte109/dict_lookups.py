@@ -49,4 +49,13 @@ def get_workout_motd(day):
        Trivia: /etc/motd is a file on Unix-like systems that contains
        a 'message of the day'
     """
-    pass
+
+    workout = WORKOUT_SCHEDULE.get(day.title())
+
+    if workout is None:
+        return INVALID_DAY
+
+    if workout == REST:
+        return CHILL_OUT
+
+    return TRAIN.format(workout)
