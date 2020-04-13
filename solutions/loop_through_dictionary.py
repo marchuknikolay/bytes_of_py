@@ -6,7 +6,6 @@ dictionary and print out the users name and how many games they've won in the fo
 To make it human readable, pluralise the word game to suit the number of games won.
 """
 
-
 games_won = dict(sara=0, bob=1, tim=5, julian=3, jim=1)
 
 
@@ -26,4 +25,6 @@ def print_game_stats(games_won):
        (Note that as of Python 3.7 - which we're using atm - dict insert order
        is retained so no sorting is required for this Bite.)
     """
-    pass
+    for name, games_count in games_won.items():
+        game = "game" if games_count == 1 else "games"
+        print(f'{name} has won {games_count} {game}')
