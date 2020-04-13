@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from solutions.infinite_loop_continue_break import print_colors
+from byte102.infinite_loop_continue_break import print_colors
 
 NOT_VALID = 'Not a valid color'
 

@@ -1,4 +1,4 @@
-from solutions.fstring_and_simple_if_else import allowed_driving
+from byte101.fstring_and_simple_if_else import allowed_driving
 
 
 def test_not_allowed_to_drive(capfd):

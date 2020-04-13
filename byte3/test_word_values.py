@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from solutions.word_values import load_words, calc_word_value, max_word_value
+from byte3.word_values import load_words, calc_word_value, max_word_value
 
 
 class Test(TestCase):

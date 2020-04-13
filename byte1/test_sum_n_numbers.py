@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from solutions.sum_n_numbers import sum_numbers
+from byte1.sum_n_numbers import sum_numbers
 
 
 class Test(TestCase):

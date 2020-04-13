@@ -1,4 +1,4 @@
-from solutions.loop_through_dictionary import print_game_stats, games_won
+from byte103.loop_through_dictionary import print_game_stats, games_won
 
 
 def test_print_game_stats(capfd):
