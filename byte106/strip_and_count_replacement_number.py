@@ -59,4 +59,4 @@ def strip_vowels(text: str) -> Tuple[str, int]:
        The str/int types in the function defintion above are part
        of Python's new type hinting:
        https://docs.python.org/3/library/typing.html"""
-    pass
+    return re.subn(r'[aeiou]', '*', text, flags=re.IGNORECASE)
