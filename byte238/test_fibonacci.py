@@ -1,3 +1,14 @@
+"""
+Bite 238. Write tests for Fibonacci
+
+Our first Test Bite! The concept is simple: to pass a Test Bite, you write tests for the program under the "Code to
+Test" tab. We run MutPy against your code to see if your tests are strong enough.
+
+To kick this off we have you write some tests for fib which generates a Fibonacci sequence. Good luck and let us know
+if you have any feedback.
+"""
+
+
 import pytest
 
 from byte238.fibonacci import fib
