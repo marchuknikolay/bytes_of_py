@@ -1,4 +1,4 @@
-from byte5.parse_list_of_names import dedup_and_title_case_names, sort_by_surname_desc, shortest_first_name, NAMES
+from byte005.parse_list_of_names import dedup_and_title_case_names, sort_by_surname_desc, shortest_first_name, NAMES
 
 PY_CONTENT_CREATORS = ['brian okken', 'michael kennedy', 'trey hunner',
                        'matt harrison', 'julian sequeira', 'dan bader',

@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from byte30.movie_data_analysis import get_movies_by_director, calc_mean_score, get_average_scores, Movie
+from byte030.movie_data_analysis import get_movies_by_director, calc_mean_score, get_average_scores, Movie
 
 director_movies = get_movies_by_director()
 

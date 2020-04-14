@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from byte2.regex_fun import extract_course_times, get_all_hashtags_and_links, match_first_paragraph
+from byte002.regex_fun import extract_course_times, get_all_hashtags_and_links, match_first_paragraph
 
 
 class Test(TestCase):
