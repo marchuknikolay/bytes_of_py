@@ -26,6 +26,7 @@ score in descending order. Only take directors into account with >= MIN_MOVIES
 import csv
 from collections import defaultdict, namedtuple
 import os
+from statistics import mean
 from urllib.request import urlretrieve
 
 BASE_URL = 'https://bites-data.s3.us-east-2.amazonaws.com/'
@@ -47,13 +48,30 @@ def get_movies_by_director():
     """Extracts all movies from csv and stores them in a dict,
     where keys are directors, and values are a list of movies,
     use the defined Movie namedtuple"""
-    pass
+
+    result = defaultdict(list)
+
+    with open(MOVIE_DATA, newline='') as csv_file:
+        reader = csv.DictReader(csv_file)
+
+        for row in reader:
+            try:
+                title_year = int(row['title_year'])
+
+                if title_year > MIN_YEAR:
+                    result[row['director_name']].append(
+                        Movie(row['movie_title'], title_year, float(row['imdb_score'])))
+            except ValueError:
+                continue
+
+    return result
 
 
 def calc_mean_score(movies):
     """Helper method to calculate mean of list of Movie namedtuples,
        round the mean to 1 decimal place"""
-    pass
+
+    return round(mean([movie.score for movie in movies]), 1)
 
 
 def get_average_scores(directors):
@@ -61,4 +79,11 @@ def get_average_scores(directors):
        return a list of tuples (director, average_score) ordered by highest
        score in descending order. Only take directors into account
        with >= MIN_MOVIES"""
-    pass
+
+    result = []
+
+    for director, movies in directors.items():
+        if len(movies) >= MIN_MOVIES:
+            result.append((director, calc_mean_score(movies)))
+
+    return sorted(result, key=lambda item: item[1], reverse=True)
