@@ -15,4 +15,10 @@ NOW = datetime.now()
 
 
 class Promo:
-    pass
+    def __init__(self, name, expired_time):
+        self.name = name
+        self.expired_time = expired_time
+
+    @property
+    def expired(self):
+        return datetime.now() > self.expired_time
