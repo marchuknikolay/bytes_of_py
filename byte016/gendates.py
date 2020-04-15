@@ -12,11 +12,21 @@ We will revisit this in an intermediate challenge. Have fun!
 """
 
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 PYBITES_BORN = datetime(year=2016, month=12, day=19)
 
 
 def gen_special_pybites_dates():
-    pass
+    date = PYBITES_BORN
+    year_date = PYBITES_BORN
+
+    while True:
+        date = date + timedelta(100)
+
+        if date > year_date + timedelta(days=365):
+            year_date = year_date + timedelta(days=365)
+            yield year_date
+
+        yield date
