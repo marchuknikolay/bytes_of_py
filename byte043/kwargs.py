@@ -10,5 +10,5 @@ The point is to limit the interface of this function and you'll see Python makes
 """
 
 
-def get_profile():
-    pass
+def get_profile(*, name='julian', profession='programmer'):
+    return f'{name} is a {profession}'
