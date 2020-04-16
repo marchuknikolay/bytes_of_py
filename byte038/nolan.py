@@ -10,8 +10,7 @@ Have fun and remember:
 
 Keep calm and code in Python!
 """
-
-
+import re
 import xml.etree.ElementTree as ET
 
 # from OMDB
@@ -27,15 +26,22 @@ xmlstring = '''<?xml version="1.0" encoding="UTF-8"?>
 
 def get_tree():
     """You probably want to use ET.fromstring"""
-    pass
+
+    return ET.fromstring(xmlstring)
 
 
 def get_movies():
     """Call get_tree and retrieve all movie titles, return a list or generator"""
-    pass
+
+    return [movie.get('title') for movie in get_tree().iter('movie')]
 
 
 def get_movie_longest_runtime():
     """Call get_tree again and return the movie title for the movie with the longest
        runtime in minutes, for latter consider adding a _get_runtime helper"""
-    pass
+
+    return max([movie for movie in get_tree().iter('movie')], key=_get_runtime).get('title')
+
+
+def _get_runtime(movie):
+    return re.match(r'\d+', movie.get('runtime')).group(0)
