@@ -22,4 +22,12 @@ See the TESTS tab for more details
 
 
 def get_index_different_char(chars):
-    pass
+    matches, no_matches = [], []
+
+    for i, char in enumerate(chars):
+        if str(char).isalnum():
+            matches.append(i)
+        else:
+            no_matches.append(i)
+
+    return matches[0] if len(matches) == 1 else no_matches[0]
