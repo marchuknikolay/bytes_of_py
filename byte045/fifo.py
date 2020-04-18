@@ -12,10 +12,11 @@ Check the standard library to see how you can do this in the shortest/most effic
 
 See an example output below and the tests that check for various values of n. Have fun!
 """
+from collections import deque
 
 
 def my_queue(n=5):
-    pass
+    return deque(maxlen=n)
 
 
 if __name__ == '__main__':
