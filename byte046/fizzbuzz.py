@@ -20,4 +20,13 @@ See also Coding Horror's Why Can't Programmers.. Program? for a fun read.
 
 
 def fizzbuzz(num):
-    pass
+    if num % 3 == 0 and num % 5 == 0:
+        return 'Fizz Buzz'
+
+    if num % 3 == 0:
+        return 'Fizz'
+
+    if num % 5 == 0:
+        return 'Buzz'
+
+    return num
